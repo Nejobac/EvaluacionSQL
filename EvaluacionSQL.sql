@@ -145,15 +145,15 @@ select * from minimarket.producto;
 ##########***GENERO LA CONSULTA DE LOS PRODUCTOS CON SU VALOR Y TIPO DE LA SECCION DE PROVEEDOR***##########
 SELECT productoCompra.nombre, precioCompra.valor, tipoProducto.categoria
 FROM minimarket.productocompra
-inner JOIN minimarket.precioCompra on minimarket.productocompra.precioCompra_id = minimarket.preciocompra.precioCompra_id
-inner join minimarket.TipoProducto on minimarket.productocompra.tipoProducto_id = minimarket.tipoproducto.categoria;
+left JOIN minimarket.precioCompra on minimarket.productocompra.precioCompra_id = minimarket.preciocompra.precioCompra_id
+left join minimarket.TipoProducto on minimarket.productocompra.tipoProducto_id = minimarket.tipoproducto.categoria;
 
 
 ##########***GENERO LA CONSULTA DE LOS PRODUCTOS CON SU VALOR Y TIPO DE LA SECCION DE VENTA***##########
 SELECT producto_id,producto.nombre, precioventa.valor, tipoProducto.categoria
 FROM minimarket.producto
- 	JOIN minimarket.precioVenta on minimarket.producto.precioVenta_id = minimarket.precioventa.precioventa_id
- 	join minimarket.tipoProducto on minimarket.producto.tipoProducto_id = minimarket.tipoproducto.tipoProducto_id;
+left 	JOIN minimarket.precioVenta on minimarket.producto.precioVenta_id = minimarket.precioventa.precioventa_id
+left 	join minimarket.tipoProducto on minimarket.producto.tipoProducto_id = minimarket.tipoproducto.tipoProducto_id;
     
 select * from minimarket.precioVenta;
 select * from minimarket.tipoproducto;
